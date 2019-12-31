@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Age Of Empires 2 Wiki</string>
+    <string name="unknown_error">Error</string>
 </resources>
