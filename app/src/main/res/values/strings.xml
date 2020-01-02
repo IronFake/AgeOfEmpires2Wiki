@@ -1,4 +1,13 @@
 <resources>
     <string name="app_name">Age Of Empires 2 Wiki</string>
     <string name="unknown_error">Error</string>
+
+    <string name="bottom_nuv_item_news">News</string>
+    <string name="bottom_nuv_item_units">Units</string>
+    <string name="bottom_nuv_item_tech">Technology</string>
+    <string name="bottom_nuv_item_civil">Civilizations</string>
+
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

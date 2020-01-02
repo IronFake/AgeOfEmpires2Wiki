@@ -8,9 +8,8 @@ import androidx.recyclerview.widget.RecyclerView
 import com.ironfake.ageofempires2wiki.R
 import com.ironfake.ageofempires2wiki.databinding.ItemNewsBinding
 import com.ironfake.ageofempires2wiki.model.Article
-import com.ironfake.ageofempires2wiki.model.News
 
-class NewsAdapter(private val context: Context) : RecyclerView.Adapter<NewsAdapter.NewsViewHolder>(){
+class NewsAdapter(private val context: Context?) : RecyclerView.Adapter<NewsAdapter.NewsViewHolder>(){
 
     /**
      * The list of posts of the adapter
