@@ -3,18 +3,18 @@
 
     <item
         android:id="@+id/news"
-        android:icon="@drawable/ic_star_black_24dp"
+        android:icon="@drawable/ic_news_50dp"
         android:title="@string/bottom_nuv_item_news"/>
     <item
         android:id="@+id/civil"
-        android:icon="@drawable/ic_star_black_24dp"
+        android:icon="@drawable/ic_civil_50dp"
         android:title="@string/bottom_nuv_item_civil"/>
     <item
         android:id="@+id/units"
-        android:icon="@drawable/ic_star_black_24dp"
+        android:icon="@drawable/ic_units_50dp"
         android:title="@string/bottom_nuv_item_units"/>
     <item
         android:id="@+id/technology"
-        android:icon="@drawable/ic_star_black_24dp"
-        android:title="@string/bottom_nuv_item_tech"/>
+        android:icon="@drawable/ic_building_50dp"
+        android:title="@string/bottom_nuv_item_build"/>
 </menu>

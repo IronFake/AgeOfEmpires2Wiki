@@ -20,9 +20,9 @@ class MainActivity : AppCompatActivity(), MainContrast.View {
     @Inject
     lateinit var presenter: MainContrast.Presenter
 
-    var civilFragment = CivilFragment()
-    var unitsFragment =  UnitsFragment()
-    var newsFragment =  NewsFragment()
+    private var civilFragment = CivilFragment()
+    private var unitsFragment =  UnitsFragment()
+    private var newsFragment =  NewsFragment()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

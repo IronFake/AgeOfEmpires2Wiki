@@ -1,9 +1,12 @@
 package com.ironfake.ageofempires2wiki.utils
 
+import android.widget.ImageView
 import androidx.databinding.BindingAdapter
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.RecyclerView
 import com.ironfake.ageofempires2wiki.ui.news.NewsAdapter
+import com.squareup.picasso.Picasso
+
 
 // Safe here as method are used by Data binding
 @Suppress("unused")
@@ -38,4 +41,11 @@ fun setLayoutManager(view: RecyclerView, layoutManager: RecyclerView.LayoutManag
 @BindingAdapter("dividerItemDecoration")
 fun setDividerItemDecoration(view: RecyclerView, dividerItemDecoration: DividerItemDecoration) {
     view.addItemDecoration(dividerItemDecoration)
+}
+
+@BindingAdapter("imageUrl")
+fun loadImage(view: ImageView, imageUrl: String) {
+    Picasso.get()
+        .load(imageUrl)
+        .into(view)
 }

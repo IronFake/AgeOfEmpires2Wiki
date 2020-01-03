@@ -1,6 +1,5 @@
 package com.ironfake.ageofempires2wiki.ui.news
 
-import android.util.Log
 import com.ironfake.ageofempires2wiki.R
 import com.ironfake.ageofempires2wiki.api.ApiServiceInterface
 import com.ironfake.ageofempires2wiki.utils.API_KEY
@@ -9,7 +8,8 @@ import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.schedulers.Schedulers
 
-class NewsPresenter : NewsContrast.Presenter {
+
+class NewsPresenter : NewsContrast.Presenter{
 
     private val subscriptions = CompositeDisposable()
     private val api: ApiServiceInterface = ApiServiceInterface.create()
@@ -41,10 +41,8 @@ class NewsPresenter : NewsContrast.Presenter {
             .subscribe(
                 { newsList -> if (newsList.articles != null){
                     view.updateNews(newsList.articles?: return@subscribe)
-                }
-                    Log.d("Tag", "Success")},
-                { view.showError(R.string.unknown_error.toString())
-                    Log.d("Tag", "Error")}
+                }},
+                { view.showError(R.string.unknown_error.toString())}
             )
         subscriptions.add(subscribe)
     }

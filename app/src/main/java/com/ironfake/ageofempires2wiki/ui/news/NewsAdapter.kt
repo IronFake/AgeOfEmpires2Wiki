@@ -9,7 +9,14 @@ import com.ironfake.ageofempires2wiki.R
 import com.ironfake.ageofempires2wiki.databinding.ItemNewsBinding
 import com.ironfake.ageofempires2wiki.model.Article
 
-class NewsAdapter(private val context: Context?) : RecyclerView.Adapter<NewsAdapter.NewsViewHolder>(){
+
+class NewsAdapter(private val context: Context?, fragment: NewsFragment) : RecyclerView.Adapter<NewsAdapter.NewsViewHolder>(){
+
+    private val listener: onItemClickListener
+
+    init {
+        this.listener = fragment
+    }
 
     /**
      * The list of posts of the adapter
@@ -28,7 +35,9 @@ class NewsAdapter(private val context: Context?) : RecyclerView.Adapter<NewsAdap
     }
 
     override fun onBindViewHolder(holder: NewsViewHolder, position: Int) {
-            holder.bind(newsList[position])
+        holder.bind(newsList[position])
+            holder.binding.root.setOnClickListener {listener.itemOnClick(newsList[position])}
+
     }
 
     /**
@@ -40,14 +49,19 @@ class NewsAdapter(private val context: Context?) : RecyclerView.Adapter<NewsAdap
         notifyDataSetChanged()
     }
 
-    class NewsViewHolder(private val binding: ItemNewsBinding) : RecyclerView.ViewHolder(binding.root){
+    class NewsViewHolder(val binding: ItemNewsBinding) : RecyclerView.ViewHolder(binding.root){
 
         /**
          * Binds a news into the view
          */
+
         fun bind(news: Article) {
             binding.news = news
             binding.executePendingBindings()
         }
+    }
+
+    interface onItemClickListener {
+        fun itemOnClick(news: Article)
     }
 }

@@ -1,5 +1,7 @@
 package com.ironfake.ageofempires2wiki.ui.news
 
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -13,9 +15,10 @@ import com.ironfake.ageofempires2wiki.R
 import com.ironfake.ageofempires2wiki.databinding.FragmentNewsBinding
 import com.ironfake.ageofempires2wiki.inkection.component.DaggerFragmentComponent
 import com.ironfake.ageofempires2wiki.model.Article
+import com.ironfake.ageofempires2wiki.ui.web.WebViewActivity
 import javax.inject.Inject
 
-class NewsFragment : Fragment(), NewsContrast.View{
+class NewsFragment : Fragment(), NewsContrast.View, NewsAdapter.onItemClickListener{
 
 
     @Inject
@@ -29,7 +32,7 @@ class NewsFragment : Fragment(), NewsContrast.View{
     /**
      * The adapter for the list of posts
      */
-    private lateinit var postsAdapter : NewsAdapter
+    private lateinit var mewsAdapter : NewsAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -46,9 +49,10 @@ class NewsFragment : Fragment(), NewsContrast.View{
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         // Inflate the layout for this fragment
 
+
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_news,  container, false)
-        postsAdapter = NewsAdapter(context)
-        binding.adapter = postsAdapter
+        mewsAdapter = NewsAdapter(context, this)
+        binding.adapter = mewsAdapter
         binding.layoutManager = LinearLayoutManager(context)
         binding.dividerItemDecoration = DividerItemDecoration(context, LinearLayoutManager.VERTICAL)
 
@@ -68,7 +72,7 @@ class NewsFragment : Fragment(), NewsContrast.View{
     }
 
     override fun updateNews(news: List<Article>) {
-        postsAdapter.updateNews(news)
+        mewsAdapter.updateNews(news)
     }
 
     override fun showError(error: String) {
@@ -81,5 +85,12 @@ class NewsFragment : Fragment(), NewsContrast.View{
 
     override fun hideLoading() {
         binding.progressVisibility = View.GONE
+    }
+
+    override fun itemOnClick(news: Article) {
+        val i = Intent(context, WebViewActivity::class.java)
+        i.data = Uri.parse(news.url.toString())
+        i.action = Intent.ACTION_VIEW
+        startActivity(i)
     }
 }
