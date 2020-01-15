@@ -4,7 +4,7 @@ import android.widget.ImageView
 import androidx.databinding.BindingAdapter
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.RecyclerView
-import com.ironfake.ageofempires2wiki.ui.news.NewsAdapter
+import com.ironfake.ageofempires2wiki.ui.newsList.NewsAdapter
 import com.squareup.picasso.Picasso
 
 

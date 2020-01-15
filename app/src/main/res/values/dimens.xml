@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="padding">2dp</dimen>
+    <dimen name="costIconSize">25dp</dimen>
+
+</resources>

@@ -8,6 +8,11 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="AppTheme.Launcher">
+        <item name="android:windowBackground">@drawable/launch_screen</item>
+    </style>
+
+
     <style name="TextAppearance.AppCompat.Widget.ActionBar.Title" parent="@style/TextAppearance.AppCompat">
 
         <item name="android:textColor">@color/colorAccent</item>
@@ -16,4 +21,5 @@
         <item name="android:fontFamily">@font/amarante</item>
         <item name="android:layout_gravity">center</item>
     </style>
+
 </resources>

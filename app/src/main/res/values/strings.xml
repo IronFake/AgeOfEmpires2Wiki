@@ -2,13 +2,37 @@
     <string name="app_name">Age Of Empires 2 Wiki</string>
     <string name="unknown_error">Error</string>
 
+    <!--BottomNavigationItems-->
     <string name="bottom_nuv_item_news">News</string>
     <string name="bottom_nuv_item_units">Units</string>
     <string name="bottom_nuv_item_build">Buildings</string>
     <string name="bottom_nuv_item_civil">Civilizations</string>
+    <string name="bottom_nuv_tech_tree">Tech Tree</string>
 
-    <string name="data">http</string>
+    <string name="name">Name:</string>
+    <string name="expansion">Expansion:</string>
+    <string name="army_type">Army Type:</string>
+    <string name="unique_unit">Unique unit:</string>
+    <string name="unique_tech">Unique tech:</string>
+    <string name="team_bonus">Team bonus:</string>
+    <string name="civilization_bonus">Civilization bonus:</string>
+    <string name="age">Age:</string>
+    <string name="description">Description:</string>
+    <string name="createdIn">Created in:</string>
+    <string name="cost">Cost:</string>
+    <string name="buildTime">Build time:</string>
+    <string name="reloadTime">Reload time:</string>
+    <string name="attackDelay">Attack delay:</string>
+    <string name="movementRate">Movement rate:</string>
+    <string name="lineOfSight">Line of sight:</string>
+    <string name="hitPoints">Hit points:</string>
+    <string name="range">Range:</string>
+    <string name="attack">Attack:</string>
+    <string name="armor">Armor:</string>
+    <string name="accuracy">Accuracy:</string>
+    <string name="units">Units:</string>
+    <string name="technologies">Technologies:</string>
+    <string name="dash">-</string>
 
 
-    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

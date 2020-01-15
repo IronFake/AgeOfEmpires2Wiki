@@ -14,7 +14,11 @@
         android:icon="@drawable/ic_units_50dp"
         android:title="@string/bottom_nuv_item_units"/>
     <item
-        android:id="@+id/technology"
+        android:id="@+id/buildings"
         android:icon="@drawable/ic_building_50dp"
         android:title="@string/bottom_nuv_item_build"/>
+    <item
+        android:id="@+id/techTree"
+        android:icon="@drawable/ic_tech_tree"
+        android:title="@string/bottom_nuv_tech_tree"/>
 </menu>

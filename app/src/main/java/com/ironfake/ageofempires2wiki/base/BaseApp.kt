@@ -1,7 +1,9 @@
 package com.ironfake.ageofempires2wiki.base
 
 import android.app.Application
+import androidx.room.Room
 import com.ironfake.ageofempires2wiki.BuildConfig
+import com.ironfake.ageofempires2wiki.data.AoeDataBase
 import com.ironfake.ageofempires2wiki.inkection.component.ApplicationComponent
 import com.ironfake.ageofempires2wiki.inkection.component.DaggerApplicationComponent
 
@@ -19,9 +21,13 @@ class BaseApp : Application() {
         if (BuildConfig.DEBUG) {
             // Maybe TimberPlant etc.
         }
+
+        /** Init all dataBases in app */
+        dataBase =  Room.databaseBuilder(applicationContext, AoeDataBase::class.java, "aoe_rep")
+            .fallbackToDestructiveMigration().build()
     }
 
-    fun setup() {
+    private fun setup() {
         component = DaggerApplicationComponent.builder()
             .build()
         component.inject(this)
@@ -33,5 +39,10 @@ class BaseApp : Application() {
 
     companion object {
         lateinit var instance: BaseApp private set
+
+        /**
+         * Init dataBases with data
+         */
+        var dataBase: AoeDataBase? = null
     }
 }
